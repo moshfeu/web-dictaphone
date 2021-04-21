@@ -29,7 +29,7 @@ if (navigator.mediaDevices.getUserMedia) {
     visualize(stream);
 
     record.onclick = function() {
-      mediaRecorder.start();
+      mediaRecorder.start(0);
       console.log(mediaRecorder.state);
       console.log("recorder started");
       record.style.background = "red";
