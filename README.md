@@ -8,3 +8,25 @@ Documentation:
 * [MediaRecorder API landing page](https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder_API): includes API reference and more
 
 Thanks to [Sole](http://soledadpenades.com/) for the oscilloscope code.
+
+## Run
+
+1. [Install](https://www.php.net/manual/en/install.php) php
+2. Run
+
+```php
+php -S localhost:8080
+```
+3. Open the browser with `http://localhost:8080`
+
+## Comment
+
+The audio files recorded and saved and `.ogg`. There are some way to convert them to `.mp3`. One of them is to use [`ffmpeg`](https://www.ffmpeg.org/).
+If `ffmpeg` is installed on your machine, go to `server.php` and remove lines 4-5 and uncomment line 6
+
+```diff
+-move_uploaded_file($audio, $name.'.ogg');
+-// encode the file to mp3 if ffmpeg is installed
+-//exec('ffmpeg -i '.$audio.' '.$name.'.mp3')
++exec('ffmpeg -i '.$audio.' '.$name.'.mp3')
+```

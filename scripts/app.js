@@ -77,7 +77,7 @@ if (navigator.mediaDevices.getUserMedia) {
       soundClips.appendChild(clipContainer);
 
       audio.controls = true;
-      const blob = new Blob(chunks, { 'type' : 'audio/mp3; codecs=opus' });
+      const blob = new Blob(chunks, { 'type' : 'audio/ogg; codecs=opus' });
 
       const data = new FormData();
       data.append('audio', blob);
